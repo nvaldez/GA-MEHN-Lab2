@@ -7,10 +7,6 @@ app.set("view engine", "hbs");
 app.use(parser.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
-// app.use(require("./routes/index"));
-
-app.get("/", (req, res) => {
-  res.send("hello there");
-});
+app.use(require("./routes/index"));
 
 app.listen(3000, () => console.log("listening on port 3000"));
