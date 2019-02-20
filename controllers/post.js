@@ -6,8 +6,6 @@ module.exports = {
   },
 
   create: (req, res) => {
-    console.log(req.body);
-
     Post.create({
       title: req.body.title,
       description: req.body.description,
@@ -19,12 +17,26 @@ module.exports = {
   },
 
   show: (req, res) => {
-    res.send(`hello ${req.params.id}`);
+    Post.findById(req.params.id).then(post => {
+      res.render("post/show", { post });
+    });
   },
   edit: (req, res) => {
-    res.send(`edit ${req.params.id}`);
+    Post.findById(req.params.id).then(post => {
+      res.render("post/edit", { post });
+    });
   },
   update: (req, res) => {
-    res.redirect("/");
+    // 5c6dc5ec6fd2f0c62a5e87fb;
+    Post.findOne({ _id: req.params.id }).then(post => {
+      post.title = req.body.title;
+      post.description = req.body.description;
+      post.url = req.body.url;
+      post.date = req.body.date;
+
+      recipe.save(err => {
+        res.redirect("/");
+      });
+    });
   }
 };
