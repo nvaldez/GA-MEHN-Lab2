@@ -1,1 +1,10 @@
-<h1>index</h1>
+<h1>Recent Post</h1>
+{{#each posts}}
+<h2><a href="{{url}}">{{title}}</a></h2>
+<p>
+    {{description}}
+</p>
+<p>
+    {{date}}
+</p>
+{{/each}}

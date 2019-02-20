@@ -4,7 +4,7 @@ const Post = require("../models/post");
 Post.remove({}).then(function() {
   // Then create "seed" items
   Post.create({
-    tile: "50 Women-Led Startups That Are Crushing Tech",
+    title: "50 Women-Led Startups That Are Crushing Tech",
     url:
       "https://www.forbes.com/sites/allysonkapin/2019/02/20/50-women-led-startups-who-are-crushing-tech/#49a480fe52b3",
     description:
@@ -12,7 +12,7 @@ Post.remove({}).then(function() {
   });
 
   Post.create({
-    tile: "Zuckerberg defends big tech, says Facebook should remain free",
+    title: "Zuckerberg defends big tech, says Facebook should remain free",
     url:
       "https://www.nbcnews.com/tech/tech-news/zuckerberg-defends-big-tech-says-facebook-should-remain-free-n973566",
     description:
@@ -20,7 +20,7 @@ Post.remove({}).then(function() {
   });
 
   Post.create({
-    tile: "Software engineer happiness matters",
+    title: "Software engineer happiness matters",
     url:
       "https://appdevelopermagazine.com/software-engineer-happiness-matters/",
     description:
